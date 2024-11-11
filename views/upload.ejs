@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1>Upload Foto dan Caption</h1>
+
+    <!-- Tambahkan tautan logout -->
+    <a href="/logout">Logout</a>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+      <label for="caption">Caption:</label>
+      <input type="text" name="caption" id="caption" required />
+      <br />
+      <label for="photo">Upload Foto:</label>
+      <input type="file" name="photo" id="photo" required />
+      <br />
+      <button type="submit">Upload</button>
+    </form>
+
+    <h2>Uploaded Photos:</h2>
+    <ul>
+      <% uploads.forEach(upload => { %>
+      <li>
+        <img
+          src="<%= upload.photo_url %>"
+          alt="Uploaded photo"
+          style="width: 100px; height: 100px"
+        />
+        <%= upload.caption %>
+      </li>
+      <% }) %>
+    </ul>
+
+    <a href="/">Go to Home</a>
+  </body>
+</html>

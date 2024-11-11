@@ -1,1 +1,21 @@
 Ini adalah project login untuk uji coba pembuatan login page dan signup page dengan express.
+
+Langkah - langkah:
+
+1. Ubah user & password pada server.js
+   const pool = new Pool({
+   user: "<UBAH>",
+   host: "localhost",
+   database: "CobaLogin",
+   password: "<UBAH>",
+   port: 5432,
+   });
+
+2. buka terminal lalu run,
+   npm install express pg multer bcryptjs express-session
+
+3. buka terminal lalu run,
+   npm install ejs
+
+4. run
+   node server.js
