@@ -1,53 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #f4f4f9;
-      }
-      .container {
-        text-align: center;
-        padding: 30px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
-        margin-bottom: 20px;
-        font-size: 2rem;
-      }
-      .button {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-      }
-      .button:hover {
-        background-color: #0056b3;
-      }
-    </style>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Link ke file styles.css -->
   </head>
   <body>
-    <div class="container">
-      <h1>Selamat datang di Website Kami!</h1>
-      <a href="/login" class="button">Login</a>
-      <a href="/signup" class="button">Signup</a>
-      <a href="/upload" class="button">Upload</a>
-    </div>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/upload">Uploads</a></li>
+
+          <!-- Link ke Beranda -->
+          <% if (loggedIn) { %>
+          <!-- Jika user sudah login -->
+          <li><a href="/profile">Profile</a></li>
+          <!-- Link Profile -->
+          <li><a href="/logout">Logout</a></li>
+          <!-- Link Logout -->
+
+          <!-- Menampilkan Nama User -->
+          <% } else { %>
+          <!-- Jika user belum login -->
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Daftar</a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
+
+    <h1>Selamat datang di <%= title %></h1>
+
+    <% if (loggedIn) { %>
+    <p>Halo, <%= namaLengkap %>!</p>
+    <% } else { %>
+    <p>Halo, Silahkan Login atau Daftar</p>
+    <% } %>
   </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - <%= title %></title>
+    <link rel="stylesheet" href="/styles.css" />
+    <!-- Link ke file styles.css -->
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Beranda</a></li>
+          <li><a href="/upload">Uploads</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <h1>Profile Pengguna</h1>
+
+    <div class="profile-container">
+      <p><strong>Nama:</strong> <%= namaLengkap %></p>
+      <p><strong>Email:</strong> <%= email %></p>
+    </div>
+
+    <div class="profile-actions">
+      <!-- Tombol untuk mengganti password -->
+      <form action="/change-password" method="GET">
+        <button type="submit">Ganti Password</button>
+      </form>
+      <!-- Tombol untuk logout -->
+      <form action="/logout" method="GET">
+        <button type="submit">Logout</button>
+      </form>
+    </div>
+  </body>
+</html>

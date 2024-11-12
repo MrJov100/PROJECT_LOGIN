@@ -8,7 +8,10 @@
   <body>
     <h1>Upload Foto dan Caption</h1>
 
-    <!-- Tambahkan tautan logout -->
+    <!-- Display greeting with the user's name -->
+    <p>Halo, <%= namaLengkap %>!</p>
+
+    <!-- Logout link -->
     <a href="/logout">Logout</a>
 
     <form action="/upload" method="POST" enctype="multipart/form-data">
